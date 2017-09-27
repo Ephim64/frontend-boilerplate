@@ -1,0 +1,26 @@
+{
+  "name": "boilerplate-webpack",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Webpack configuration for RD unit",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack --config ./config/webpack.config.js",
+    "watch": "npm run build -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ephim64/webpack-configs.git"
+  },
+  "author": "Ephim Gotsco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ephim64/webpack-configs/issues"
+  },
+  "homepage": "https://github.com/ephim64/webpack-configs#readme",
+  "devDependencies": {
+    "html-loader": "^0.5.1",
+    "htmllint-loader": "^1.3.8",
+    "webpack": "3.6.0"
+  }
+}
