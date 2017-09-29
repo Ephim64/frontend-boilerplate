@@ -1,12 +1,16 @@
 const { LoaderOptionsPlugin } = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const {
   build,
   html,
 } = require('./paths');
 
+const extractHTML = new ExtractTextPlugin('[name].html');
+
 const config = {
   entry: {
-    'index.html': html
+    index: html
   },
   devtool: 'source-map',
   output: {
@@ -28,14 +32,14 @@ const config = {
       },
       {
         test: /\.(html)$/,
-        use: {
-          loader: 'html-loader'
-        }
+        use: extractHTML.extract(['html-loader'])
       }
     ]
   },
   plugins: [
-    new LoaderOptionsPlugin({ debug: true })
+    new LoaderOptionsPlugin({ debug: true }),
+    new CleanWebpackPlugin(build),
+    extractHTML
   ]
 };
 
