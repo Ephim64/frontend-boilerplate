@@ -1,5 +1,6 @@
 {
   "rules":{
-    "color-hex-length": "long"
+    "color-hex-length": "long",
+    "color-no-invalid-hex": true
   }
 }

@@ -1,7 +1,11 @@
 const { join, resolve } = require('path');
+const {realpathSync} = require('fs');
+
+const root = realpathSync(process.cwd());
+const resolveRoot = (relativePath) => resolve(root, relativePath);
 
 module.exports = {
-  html: resolve(process.cwd(), 'src/index.html'),
-  styles: resolve(process.cwd(), 'src/styles.css'),
-  build: resolve(process.cwd(), '.dist')
+  html: resolveRoot('src/index.html'),
+  styles: resolveRoot('src/styles.css'),
+  build: resolveRoot('.dist')
 };
