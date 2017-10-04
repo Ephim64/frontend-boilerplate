@@ -1,12 +1,10 @@
 {
+  "plugins":[
+    "stylelint-scss"
+  ],
   "rules":{
-<<<<<<< HEAD
     "color-hex-length": "long",
-    "color-no-invalid-hex": true
+    "color-no-invalid-hex": true,
+    "scss/selector-no-redundant-nesting-selector": true
   }
 }
-=======
-    "color-hex-length": "long"
-  }
-}
->>>>>>> dc44cb6df56211b1567b4c786b6f5c220e358ac7

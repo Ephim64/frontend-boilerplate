@@ -1,21 +1,20 @@
 const { LoaderOptionsPlugin } = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const StyleLintWebpackPlugin = require('stylelint-webpack-plugin');
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const {
   build,
   html,
-  styles
+  stylesCss
 } = require('./paths');
 
 const config = {
   entry: {
     'index.html': html,
-    styles: styles
+    styles: stylesCss
   },
   devtool: 'source-map',
   output: {
     path: build,
-    filename: '[name].[chunkhash].bundl.js'
+    filename: '[name].[chunkhash].bundle.js'
   },
   resolve: {
     modules: ['node_modules'],
@@ -24,24 +23,21 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(html)$/,
+        test: /\.html$/,
         enforce: 'pre',
         use: {
           loader: 'htmllint-loader'
         }
       },
       {
-        test: /\.(html)$/,
+        test: /\.html$/,
         use: {
           loader: 'html-loader'
         }
       },
       {
-        test: /\.css/,
-        use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: 'css-loader'
-          })
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
@@ -54,14 +50,7 @@ const config = {
   },
   plugins: [
     new LoaderOptionsPlugin({ debug: true }),
-    new ExtractTextPlugin({
-      filename: '[name].css'
-    }),
-    new StyleLintWebpackPlugin({
-      configFile:'.stylelintrc',
-      ignoreDisables: true,
-      files: '**/*.css'
-      })
+    new StylelintWebpackPlugin()
   ]
 };
 
