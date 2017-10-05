@@ -1,16 +1,18 @@
 const { LoaderOptionsPlugin } = require('webpack');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
-const {
-  build,
-  html,
-  stylesCss
-} = require('./paths');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { build, entries, html, stylesCss } = require('./paths');
+
+const extractHTML = new ExtractTextPlugin('[name].html');
+const extractCSS = new ExtractTextPlugin('[name].css');
 
 const config = {
-  entry: {
-    'index.html': html,
-    styles: stylesCss
-  },
+  entry: entries,
+  // entry: {
+  //   html,
+  //   assets: entries
+  // },
   devtool: 'source-map',
   output: {
     path: build,
@@ -24,32 +26,36 @@ const config = {
     rules: [
       {
         test: /\.html$/,
-        enforce: 'pre',
-        use: {
-          loader: 'htmllint-loader'
-        }
-      },
-      {
-        test: /\.html$/,
-        use: {
-          loader: 'html-loader'
-        }
+        use: [
+          'html-loader'
+          'htmllint-loader'
+        ]
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          'file-loader?name=[name].[ext]',
+          'style-loader',
+          'extract-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
         loader: 'url-loader',
         options: {
-          limit: 10000
+          limit: 10000 //What is the limit for loading as data-url?
         }
       }
     ]
   },
   plugins: [
     new LoaderOptionsPlugin({ debug: true }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      // template: `!!html-loader!htmllint-loader!${html}`
+      template: html
+    }),
     new StylelintWebpackPlugin()
   ]
 };
