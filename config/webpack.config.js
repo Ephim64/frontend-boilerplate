@@ -1,18 +1,15 @@
 const { LoaderOptionsPlugin } = require('webpack');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { build, entries, html, stylesCss } = require('./paths');
 
-const extractHTML = new ExtractTextPlugin('[name].html');
-const extractCSS = new ExtractTextPlugin('[name].css');
-
 const config = {
-  entry: entries,
-  // entry: {
-  //   html,
-  //   assets: entries
-  // },
+  // entry: entries,
+  entry: {
+    // html,
+    styles: stylesCss
+    // assets: entries
+  },
   devtool: 'source-map',
   output: {
     path: build,
@@ -24,19 +21,16 @@ const config = {
   },
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        use: [
-          'html-loader'
-          'htmllint-loader'
-        ]
-      },
+      // {
+      //   test: /\.html$/,
+      //   use: ['html-loader', 'htmllint-loader']
+      // },
       {
         test: /\.css$/,
         use: [
-          'file-loader?name=[name].[ext]',
-          'style-loader',
-          'extract-loader',
+          // 'file-loader?name=[name].[ext]',
+          'style-loader/url',
+          // 'extract-loader',
           'css-loader'
         ]
       },
@@ -53,8 +47,7 @@ const config = {
     new LoaderOptionsPlugin({ debug: true }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      // template: `!!html-loader!htmllint-loader!${html}`
-      template: html
+      template: `!!html-loader!htmllint-loader!${html}`
     }),
     new StylelintWebpackPlugin()
   ]
