@@ -1,19 +1,20 @@
 const { LoaderOptionsPlugin } = require('webpack');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { build, entries, html, stylesCss } = require('./paths');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const { build, entries, html, stylesCss, js } = require('./paths');
+
+const extractCSS = new ExtractTextPlugin('css/[name].css');
 
 const config = {
-  // entry: entries,
-  entry: {
-    // html,
-    styles: stylesCss
-    // assets: entries
-  },
+  entry: [stylesCss, js],
   devtool: 'source-map',
+  devServer: {
+    contentBase: build
+  },
   output: {
     path: build,
-    filename: '[name].[chunkhash].bundle.js'
+    filename: 'js/[name][chunkhash].js'
   },
   resolve: {
     modules: ['node_modules'],
@@ -21,25 +22,27 @@ const config = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.html$/,
-      //   use: ['html-loader', 'htmllint-loader']
-      // },
       {
         test: /\.css$/,
-        use: [
-          // 'file-loader?name=[name].[ext]',
-          'style-loader/url',
-          // 'extract-loader',
-          'css-loader'
-        ]
+        use: {
+          loader: extractCSS.extract('css-loader'),
+          options: { name: 'css/[name][hash:8].[ext]' }
+        }
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|eot|ttf|woff|woff2)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000 //What is the limit for loading as data-url?
-        }
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        use: 'url-loader'
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/fonts/[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },
@@ -47,9 +50,10 @@ const config = {
     new LoaderOptionsPlugin({ debug: true }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: `!!html-loader!htmllint-loader!${html}`
+      template: `!!html-loader!${html}`
     }),
-    new StylelintWebpackPlugin()
+    new StylelintWebpackPlugin(),
+    extractCSS
   ]
 };
 
