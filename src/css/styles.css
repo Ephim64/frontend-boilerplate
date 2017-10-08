@@ -68,24 +68,7 @@ p {
   transform: translateY(0);
 }
 
-/* .panel-1{
-  background: #DC4C46;
-}
-.panel-2{
-  background: #672E3B;
-}
-.panel-3{
-  background: #F3D6E4;
-}
-.panel-4{
-  background: #C48F65;
-}
-.panel-5{
-  background: #223A5E;
-} */
-
 .panel-1 {
-  /*background-image: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);*/
   background-image: url(../assets/img/darkest-dungeon-wallpaper-27.jpg);
 }
 .panel-2 {

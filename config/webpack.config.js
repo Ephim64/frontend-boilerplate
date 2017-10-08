@@ -14,6 +14,7 @@ const config = {
   },
   output: {
     path: build,
+    publicPath: '',
     filename: 'js/[name][chunkhash].js'
   },
   resolve: {
@@ -24,14 +25,23 @@ const config = {
     rules: [
       {
         test: /\.css$/,
-        use: {
-          loader: extractCSS.extract('css-loader'),
-          options: { name: 'css/[name][hash:8].[ext]' }
-        }
+        use: extractCSS.extract({
+          fallback: 'style-loader',
+          use: ['css-loader'],
+          publicPath: '../'
+        })
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
-        use: 'url-loader'
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10000,
+              name: 'assets/img/[name].[ext]'
+            }
+          }
+        ]
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
@@ -54,6 +64,21 @@ const config = {
     }),
     new StylelintWebpackPlugin(),
     extractCSS
+    /*
+    if to add sprite generator (like SpriteSmith) we need to point it to specific folder.
+    and after that it will generate a output.
+    We need to specify source folder.
+    Would SpriteSmith and url-loader conflict?
+    Api of SpriteSmith:
+      src:{
+      cwd - closes common directory for all source images
+      glob - glob pattern
+    },
+    target:{
+    image - target image filename
+    css - generated styles, based on images in sprite
+  }
+    */
   ]
 };
 
