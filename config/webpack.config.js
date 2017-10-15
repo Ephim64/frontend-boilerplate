@@ -2,6 +2,8 @@ const { LoaderOptionsPlugin } = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { build, entries, html, stylesCss, js } = require('./paths');
 
+console.log(process.env.NODE_ENV);
+
 const config = {
   entry: [stylesCss, js],
   devtool: 'source-map',
@@ -22,13 +24,13 @@ const config = {
       {
         test: /\.html$/,
         use: [
-          'html-loader',
-          {
-            loader: 'htmlhint-loader',
-            options: {
-              configFile: '.htmlhintrc'
-            }
-          }
+          'html-loader'
+          // {
+          //   loader: 'htmlhint-loader',
+          //   options: {
+          //     configFile: '.htmlhintrc'
+          //   }
+          // }
         ]
       },
       {
