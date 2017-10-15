@@ -1,11 +1,24 @@
 const { LoaderOptionsPlugin } = require('webpack');
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { build, entries, html, stylesCss, js } = require('./paths');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const {
+  build,
+  entries,
+  html,
+  stylesCss,
+  stylesScss,
+  js,
+  spriteImages,
+  spritesmithGenerated
+} = require('./paths');
 
-console.log(process.env.NODE_ENV);
+const SpriteSmith = require('./plugins/SpriteSmith.config');
+
+const extractCSS = new ExtractTextPlugin('css/[name].css');
 
 const config = {
-  entry: [stylesCss, js],
+  entry: [stylesCss, stylesScss, js],
   devtool: 'source-map',
   devServer: {
     contentBase: build
@@ -16,49 +29,41 @@ const config = {
     filename: 'js/[name][chunkhash].js'
   },
   resolve: {
-    modules: ['node_modules'],
+    modules: ['node_modules', spritesmithGenerated],
     extensions: ['.js', '.json']
   },
   module: {
     rules: [
       {
         test: /\.html$/,
-        use: [
-          'html-loader'
-          // {
-          //   loader: 'htmlhint-loader',
-          //   options: {
-          //     configFile: '.htmlhintrc'
-          //   }
-          // }
-        ]
+        use: ['html-loader']
       },
       {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [
-                require('stylelint')(),
-                require('postcss-reporter')()
-              ]
-            }
-          }
-        ]
+        test: /\.(css)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(scss)$/,
+        use: extractCSS.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader'],
+          publicPath: '../'
+        })
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
         use: [
           {
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              name: 'assets/img/[name].[ext]'
-            }
+            loader: 'file-loader',
+            options: { name: 'assets/img/[name].[ext]' }
           }
+          // {
+          //   loader: 'url-loader',
+          //   options: {
+          //     limit: 10000,
+          //     name: 'assets/img/[name].[ext]'
+          //   }
+          // }
         ]
       },
       {
@@ -78,8 +83,11 @@ const config = {
     new LoaderOptionsPlugin({ debug: true }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: html
-    })
+      template: `!!html-loader!${html}`
+    }),
+    new StylelintWebpackPlugin(),
+    extractCSS,
+    SpriteSmith
     /*
     if to add sprite generator (like SpriteSmith) we need to point it to specific folder.
     and after that it will generate a output.
@@ -93,7 +101,8 @@ const config = {
     target:{
     image - target image filename
     css - generated styles, based on images in sprite
-  }
+    }
+    what are the template for stylesheet produced by spritesmith
     */
   ]
 };

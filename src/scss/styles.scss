@@ -1,0 +1,5 @@
+@import '~sprite.scss';
+
+body {
+  @include sprite($open);
+}
