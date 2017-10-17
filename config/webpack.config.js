@@ -36,7 +36,16 @@ const config = {
     rules: [
       {
         test: /\.html$/,
-        use: ['html-loader']
+        use: [
+          'html-loader',
+          {
+            loader: 'htmllint-loader',
+            options: {
+              failOnError: false,
+              failOnWarning: false
+            }
+          }
+        ]
       },
       {
         test: /\.(css)$/,
@@ -83,7 +92,7 @@ const config = {
     new LoaderOptionsPlugin({ debug: true }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: `!!html-loader!${html}`
+      template: html
     }),
     new StylelintWebpackPlugin(),
     extractCSS,
