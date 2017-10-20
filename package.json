@@ -5,11 +5,9 @@
   "description": "Webpack configuration for RD unit",
   "main": "index.js",
   "scripts": {
-    "build":
-      "set NODE_ENV=production && ./node_modules/.bin/webpack --config ./config/webpack.config.js",
+    "build": "set NODE_ENV=production && ./node_modules/.bin/webpack --config ./config/webpack.config.js",
     "watch": "npm run build -- --watch",
-    "start":
-      "./node_modules/.bin/webpack-dev-server --config ./config/webpack.config.js --open"
+    "start": "./node_modules/.bin/webpack-dev-server --config ./config/webpack.config.js --open"
   },
   "repository": {
     "type": "git",
@@ -22,6 +20,7 @@
   },
   "homepage": "https://github.com/ephim64/webpack-configs#readme",
   "devDependencies": {
+    "chalk": "2.2.0",
     "css-loader": "0.28.7",
     "extract-loader": "1.0.1",
     "extract-text-webpack-plugin": "3.0.1",

@@ -1,0 +1,39 @@
+.spoiler{
+    &__expand{
+        cursor: pointer;
+        color: lighten(#000000,50%);
+        display: inline-block;
+        font-size: 1.5em;
+        padding: 0 10px;
+        &:hover{
+            color: #000000;
+        }
+    }
+    &__collapse{
+        cursor: pointer;
+        color: lighten(#000000,50%);
+        display: none;
+        font-size: 1.5em;
+        padding: 0 10px;
+        &:hover{
+            color: #000000;
+        }
+    }
+    &:checked ~ &__expand{
+        display: none;
+    }
+    &:checked ~ &__collapse{
+        display: inline-block;
+    }
+    &__content{
+        display: none;
+        margin-bottom: 30px;
+        @include clearfix();
+    }
+    &:checked ~ &__content{
+        display: block;
+    }
+    &_hidden{
+        display: none;
+    }
+}

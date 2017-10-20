@@ -1,0 +1,49 @@
+$resolutions: (xs:749px, sm:750px, md:1000px, lg:1200px);
+$columns: 18;
+$header-height: 70px !default;
+$header-height-mobile: 60px !default;
+$nav-width: 200px !default;
+$btn-default-color-from: #e0e0e0 !default;
+$btn-default-color-to: #f1f1f1 !default;
+$border-color: #d9d9d9 !default;
+$text-gray: #999999 !default;
+$text-red: #cb012f !default;
+//Container
+$container-background: #f2f2f2;
+//Pagination
+$pagination-color: #999999 !default;
+$pagination-link-active: #ff0000 !default;
+//Badge
+$badge-new: #cb012f !default;
+$badge-viewed: #808080 !default;
+$badge-text-color: #ffffff !default;
+$badge-outlined-color: #cb012f !default;
+$badge-outlined-text-color: #cb012f !default;
+//Tab
+$tab-item-color: #cb012f !default;
+//Panel
+$panel-heading-4-color: #cb012f !default;
+$panel-heading-6-color: #cb012f !default;
+$panel-text-color: #cb012f !default;
+$panel-date-color: #999999 !default;
+$panel-article-color: #cb012f !default;
+$panel-btn-background: #f2f2f2 !default;
+$panel-btn-color: #000000 !default;
+$panel-btn-active-color: #cb012f !default;
+//Navigation
+$nav-link-color: #999999 !default;
+$nav-background: #333333 !default;
+$nav-item-border-color: #000000 !default;
+$nav-item-hover-color: #000000 !default;
+$nav-glyphicon-color: #cb012f !default;
+//Header
+$header-background-color: #ffffff !default;
+$header-btn-color: #cb012f !default;
+//User info
+$user-info-color: #999999 !default;
+$user-info-border-color : #000000 !default;
+//Select
+$select-text-color: #999999 !default;
+//btn
+$button-color-bottom: #e0e0e0 !default;
+$button-color-top: #f1f1f1 !default;

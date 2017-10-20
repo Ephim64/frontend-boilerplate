@@ -1,0 +1,6 @@
+{
+  "id-class-style" : "bem",
+  "line-end-style" : "crlf",
+  "spec-char-escape" : false,
+  "attr-name-ignore-regex" : "data-*"
+}

@@ -1,0 +1,58 @@
+.tab{
+    background: #d7d7d7;
+    border: 1px solid $border-color;
+    border-bottom: none;
+    border-radius: 13px 13px 0 0;
+    display: inline-block;
+    padding: 10px 0;
+    text-align: center;
+    @include uppercase;
+    @include capitalized;
+    &s{
+        margin-top: 15px;
+    }
+    &1{
+        float: left;
+        width: 40%;
+    }
+    &2{
+        width: 60%;
+        float: right;
+    }
+    &__content{
+        padding: 10px 10px;
+        border: 1px solid $border-color;
+        border-top: none;
+        // position: relative;
+        text-align: center;
+        width: 100%;
+        display: table;
+        table-layout: fixed;
+        @include clearfix();
+        &_cell{
+            display: table-cell;
+            width: 20%;
+        }
+    }
+    &__glyphicon{
+        padding-left: 5px;
+        &_theme{
+            color: $tab-item-color;
+        }
+    }
+    &_hidden{
+        display: none;
+    }
+    &-control1:checked ~ div &1{
+        background: #f2f2f2;
+    }
+    &-control2:checked ~ div &2{
+        background: #f2f2f2;
+    }
+    &-control1:checked ~ &-content2{
+        display: none;
+    }
+    &-control2:checked ~ &-content1{
+        display: none;
+    }
+}

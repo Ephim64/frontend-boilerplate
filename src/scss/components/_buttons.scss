@@ -1,0 +1,76 @@
+.btn{
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    min-width: 130px;
+    padding: 10px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000000;
+
+    &__default{
+        background: linear-gradient(to top, $btn-default-color-from, $btn-default-color-to);
+        &:active{
+            color: $text-red;
+            background: linear-gradient(to bottom, $btn-default-color-from, $btn-default-color-to);
+        }
+    }
+    &_export{
+        position: absolute;
+        right: 0;
+        top: 10px;
+        &:before{
+            padding-right: 5px;
+            content: url('../../Content/images/excel.png');
+        }
+        @media all and (max-width:map-get($resolutions,'xs')){
+            position: static;
+        }
+    }
+    &__glyphicon{
+        padding: 0 5px;
+    }
+    &__tag{
+        // border: 1px solid #d9d9d9;
+        border-radius: 0 5px 5px 0;
+        border-left: none;
+        line-height: 1;
+        margin-left: 30px;
+        overflow: visible;
+        position: relative;
+        &:active{
+            background-image: linear-gradient(to bottom, $button-color-bottom, $button-color-top);
+        }
+        &:before{
+            content: " ";
+            border-left: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-color: transparent transparent $border-color $border-color;
+            height: 24px;
+            width: 24px;
+            position: absolute;
+            background-image: linear-gradient(to bottom right, $button-color-top, $button-color-bottom);
+            transform: rotate(45deg) scale(1.02);
+            top: 5px;
+            left: -13px;
+        }
+        &:hover:before{
+            border-color: darken($border-color,25%);
+        }
+        &:active:before{
+            background-image: linear-gradient(to top left, $button-color-top, $button-color-bottom);
+        }
+    }
+    &__wrapper{
+        position: relative;
+    }
+    &_theme{
+        border-color: $border-color;
+        &:hover{
+            border-color: darken($border-color, 25%);
+        }   
+    }
+}

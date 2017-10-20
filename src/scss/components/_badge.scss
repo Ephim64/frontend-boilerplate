@@ -1,0 +1,22 @@
+﻿.badge{
+    
+    border-radius: 5px;
+    display: inline-block;
+    color: $badge-text-color;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 10px;
+    margin:0 5px;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    &_viewed{
+        background-color: $badge-viewed;
+    }
+    &_new{
+        background-color: $badge-new;
+    }
+    &_outlined{
+        border:1px solid $badge-outlined-color;
+        color: $badge-outlined-text-color;
+    }
+}

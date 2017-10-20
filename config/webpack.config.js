@@ -1,3 +1,4 @@
+const { join } = require('path');
 const { LoaderOptionsPlugin } = require('webpack');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,7 +11,8 @@ const {
   stylesScss,
   js,
   spriteImages,
-  spritesmithGenerated
+  spritesmithGenerated,
+  loaders
 } = require('./paths');
 
 const SpriteSmith = require('./plugins/SpriteSmith.config');
@@ -18,7 +20,7 @@ const SpriteSmith = require('./plugins/SpriteSmith.config');
 const extractCSS = new ExtractTextPlugin('css/[name].css');
 
 const config = {
-  entry: [stylesCss, stylesScss, js],
+  entry: [stylesScss],
   devtool: 'source-map',
   devServer: {
     contentBase: build
@@ -31,6 +33,11 @@ const config = {
   resolve: {
     modules: ['node_modules', spritesmithGenerated],
     extensions: ['.js', '.json']
+  },
+  resolveLoader: {
+    alias: {
+      'hl-loader': join(loaders, 'hl-loader.js')
+    }
   },
   module: {
     rules: [
@@ -66,13 +73,6 @@ const config = {
             loader: 'file-loader',
             options: { name: 'assets/img/[name].[ext]' }
           }
-          // {
-          //   loader: 'url-loader',
-          //   options: {
-          //     limit: 10000,
-          //     name: 'assets/img/[name].[ext]'
-          //   }
-          // }
         ]
       },
       {

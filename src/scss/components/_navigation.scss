@@ -1,0 +1,62 @@
+.nav{
+    background: $nav-background;
+    display: inline-block;
+    list-style: none;
+    position: fixed;
+    top: $header-height;
+    text-align: left;
+    height: 100%;
+    @include transition();
+    width: $nav-width;
+    &__control:checked + &{
+        left: 0;
+    }
+    &__link{
+        color: $nav-link-color;
+        cursor: pointer;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 15px 15px;
+        display: block;
+        &:hover{
+            color: #ffffff;
+        }
+    }
+    &__item{
+        border-top: 1px solid $nav-item-border-color;
+        &:hover{
+            background: $nav-item-hover-color;
+        }
+    }
+    &__glyphicon{
+        color: $nav-glyphicon-color;
+        padding: 0 5px;
+        @media all and (min-width:map-get($resolutions,'sm')){
+            &_hidden-sm{
+                visibility: hidden;
+            }
+        }
+    }
+    &_hidden{
+        display: none;
+    }
+    @each $prefix,$width in $resolutions{
+        @if $prefix == 'xs'{
+            @media all and (max-width:$width){
+                &{
+                    left: -$nav-width;
+                    position: fixed;
+                    overflow: auto;
+                    top: $header-height-mobile;
+                    z-index: 1;
+                }
+                &__glyphicon{
+                    color: $nav-link-color;
+                    &_hidden-xs{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

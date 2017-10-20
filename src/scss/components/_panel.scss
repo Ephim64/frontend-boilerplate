@@ -1,0 +1,139 @@
+.panel{
+    background: #ffffff;
+    border: 1px solid $border-color;
+    box-shadow: 3px 3px 3px $border-color;
+    margin:{
+        top: 10px;
+        bottom: 10px;
+    }
+    &__article{
+        line-height: 1.5;
+        padding:{
+            top: 0;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+        }
+        @include theme($panel-article-color);
+        @include separated-top($border-color);
+    }
+    &__body{
+        width: 100%;
+    }
+    
+    &__date{
+        color: $panel-date-color;
+        display: inline-block;
+        padding-left: 5px;
+        font-size: 12px;
+    }
+    &__footer{
+        direction: rtl;
+        display: table;
+        width: 100%;
+        &-btn{
+            border-top: 2px solid;
+            border-left: 2px solid;
+            border-collapse: separate;
+            cursor: pointer;
+            direction: ltr;
+            display: table-cell;
+            padding: 10px 0;
+            table-layout: fixed;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            width: (100%/3);
+            &:last-child{
+                border-left: none;
+            }
+            &_theme{
+                background: $panel-btn-background;
+                border-color: $border-color;
+                color: $panel-btn-color;
+            }
+            &:hover{
+                background: darken($panel-btn-background, 10%);
+            }
+            &:active{
+                color: $panel-btn-active-color;
+            }
+        }
+        @media all and (max-width:map-get($resolutions,'xs')){
+            &{
+                direction: ltr;
+                display: block;
+                width: 100%;
+                &-btn{
+                    border-left: none;
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &__header{
+        padding:{
+            top: 10px;
+            left: 10px;
+        }
+        @include clearfix();
+    }
+    &__heading-3{
+        font:{
+            size: 20px;
+            weight: bold;
+        }
+        line-height: 1;
+        margin: 5px 0;
+        text-transform: capitalize;
+    }
+    &__heading-4{
+        display: inline-block;
+        font:{
+            size: 14px;
+            weight: bold;
+        }
+        line-height: 1;
+        margin: 5px 0;
+        &_theme{
+            color: $panel-heading-4-color;
+            font-weight: normal;
+        }
+        @include uppercase;
+        @include capitalized;
+    }
+    &__heading-5{
+        font:{
+            size: 14px;
+        }
+        line-height: 1;
+        margin: 5px 0;
+        @include uppercase;
+        @include capitalized;
+    }
+    &__heading-6{
+        line-height: 1;
+        font-size: 14px;
+        margin-top: 10px;
+        &_underline{
+            text-decoration: underline;
+        }
+        @include uppercase;
+        @include capitalized;
+        @include theme($panel-heading-6-color);
+    }
+    &__glyphicon{
+        padding: 0 5px;
+    }
+    &__status{
+        float: right;
+    }
+    &__text{
+        font-size: 14px;
+        &_padded{
+            padding-left: 20px;
+        }
+        @include theme($panel-text-color);
+    }
+}

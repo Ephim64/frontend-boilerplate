@@ -1,46 +1,212 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE HTML>
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Flex Panel Gallery</title>
-  <script>
-  (function() {
-  console.log('test');
-})();
-</script>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/fonts.css" rel="stylesheet" />
+    <link href="css/build/index.css" rel="stylesheet" />
+    <!--[if gte IE 9]>
+        <link href="css/build/ie9.css" rel="stylesheet" />
+    <![endif]-->
 </head>
 
 <body>
-  <div class="panels">
-    <div class="panel panel-1">
-      <p>Hey</p>
-      <p>Let's</p>
-      <p>Dance</p>
+    <header class="header">
+        <label class="fa fa-2x fa-bars text-red header_hidden-sm header__btn header__btn_theme" for="menu"></label>
+        <a href="index.html"><img class="header__logo" src="Content/images/logo.png" alt="epam" /></a>
+    </header>
+    <input class="nav_hidden nav__control" type="checkbox" id="menu" />
+    <nav class="nav">
+        <ul>
+            <li class="nav__item"><a class="nav__link" href="#">expert search</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">saved experts</a></li>
+            <li class="nav__item"><a class="nav__link" href="#">projects<i class="fa fa-flag nav__glyphicon nav__glyphicon nav__glyphicon_hidden-sm"></i></a></li>
+            <li class="nav__item"><a class="nav__link" href="#">consultations<i class="fa fa-phone nav__glyphicon nav__glyphicon_hidden-xs"></i></a></li>
+            <li class="nav__item"><a class="nav__link" href="#">events</a></li>
+            <li class="nav__item"><a class="nav__link" href="#"><i class="fa fa-sign-out nav__glyphicon nav__glyphicon_hidden-xs"></i>logout</a></li>
+        </ul>
+        <div class="login-info login-info_theme">
+            <i class="fa fa-user"></i>
+            <span class="login-info__header">loged in as</span>
+            <p class="login-info__user">girish gopalan</p>
+        </div>
+    </nav>
+    <div class="container">
+        <section class="pagination col-sm-offset-1 col-lg-offset-3">
+            <a href="#" class="pagination__link pagination__link_theme">
+				<i class="fa fa-chevron-left pagination__item"></i>
+				<h3 class="pagination__text">Projects list</h3>
+			</a>
+        </section>
+        <section class="btn__wrapper col-sm-offset-1 col-lg-offset-3 col-xs-16 col-sm-16 col-md-16 col-lg-12">
+            <div class="list">
+                <input id="spoiler" class="spoiler spoiler_hidden" type="checkbox" />
+                <h2 class="list__header">Test Project last</h2>
+                <label class="spoiler__expand fa fa-plus-circle" for="spoiler"></label>
+                <label class="spoiler__collapse fa fa-minus-circle"for="spoiler"></label>
+                <div class="spoiler__content">
+                    <ul class="list__info">
+                        <li class="list__item">
+                            <div class="list__item-name">Create date</div>
+                            <div class="list__item-content list__item-content_theme">01/20/15</div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__item-name">Target industries</div>
+                            <div class="list__item-content list__item-content_theme">Wireline Telephone Equipment</div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__item-name">Bios sent</div>
+                            <div class="list__item-content list__item-content_theme">10</div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__item-name">Calls scheduled</div>
+                            <div class="list__item-content list__item-content_theme">2</div>
+                        </li>
+                    </ul>
+                    <ul class="list__info list__info_float-right">
+                        <li class="list__item">
+                            <div class="list__item-name">Requested consultations</div>
+                            <div class="list__item-content list__item-content_theme">10</div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__item-name">Target companies</div>
+                            <div class="list__item-content list__item-content_theme">Frontier Communication Corporation [FTR]</div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__item-name">Calls completed</div>
+                            <div class="list__item-content list__item-content_theme">2</div>
+                        </li>
+                        <li class="list__item">
+                            <div class="list__item-name">Calls in scheduling</div>
+                            <div class="list__item-content list__item-content_theme">1</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tabs">
+                <input id="tab-control1" class="tab_hidden tab-control1" type="radio" name="tabs" checked />
+                <input id="tab-control2" class="tab_hidden tab-control2" type="radio" name="tabs" />
+                <div class="clearfix">
+                    <label class="tab_uppercase tab tab1" for="tab-control1">
+                        experts<i class="tab__glyphicon tab__glyphicon_theme fa padded-5 fa-flag"></i>
+                    </label>
+                    <label class="tab_uppercase tab tab2" for="tab-control2">
+                        consultations<i class="tab__glyphicon tab__glyphicon_theme fa padded-5 fa-phone"></i>
+                    </label>
+                </div>
+                <div class="tab__content tab-content1">
+                    <button class="btn btn_theme btn__default tab__content_cell pull-left">expand all</button>
+                    <button class="btn btn_theme btn__default btn_export">export</button>
+                    <button class="btn btn_theme btn__default tab__content_cell pull-right btn__tag"><i class="fa padded-5 fa-filter btn__glyphicon"></i>filters</button>
+                    <div class="select__wrapper">
+                        <select class="select select_theme" name="sort-status" id="sort-status">
+                            <option value="placeholder">Sort by Status</option>
+                            <option value="status1">status 1</option>
+                            <option value="status2">status 2</option>
+                            <option value="status3">status 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="tab__content tab-content2">
+                    <button class="btn btn__default btn_export">export</button>
+                    <p>Content for </p>
+                </div>
+            </div>
+        </section>
+        <section class="panel col-sm-offset-1 col-lg-offset-3 col-xs-16 col-sm-16 col-md-16 col-lg-12">
+            <header class="panel__header">
+                <h4 class="panel__heading-4 panel__heading-4_uppercase panel__heading-4_theme">industry expert</h4>
+                <div class="panel__status">
+                    <p class="panel__date">07/13/14</p>
+                    <span class="badge badge_new">New</span>
+                </div>
+            </header>
+            <section class="panel__body">
+                <section class="panel__article">
+                    <h3 class="panel__heading-3">mikhail semichev</h3>
+                    <h4 class="panel__heading-4 panel__heading-4_uppercase">epam<span class="badge badge_outlined">Public</span></h4>
+                    <h5 class="panel__heading-5">FE developer<span class="panel__date">(12/01/11 - Present)</span></h5>
+                    <p class="panel__text panel__text_theme">
+                        Premium Rate: This Expert's hourly consulting exceeds our standart rate and would require an additional call debit.
+                    </p>
+                    <p class="panel__text panel__text_theme">
+                        Translator Required: This Expert requires a translator, which can coordinate for one call debit.
+                    </p>
+                </section>
+                <article class="panel__article panel__article_separated-top">
+                    <h6 class="panel__heading-6 panel__heading-6_underline panel__heading-6_capitalized panel__heading-6_theme">Confirmed availability</h6>
+                    <p class="panel__text panel__text_padded panel__text_theme">Tuesday 07/21/15 11:00 AM - 07:13 AM (UTC-05:00) Eastern Time (US & Canada)</p>
+                    <p class="panel__text panel__text_padded panel__text_theme">Monday 07/20/15 07:00 AM - 10:00 AM (UTC-05:00) Eastern Time (US & Canada)</p>
+                </article>
+            </section>
+            <section class="panel__footer">
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-phone"></i>schedule</a>
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-info-circle"></i>request info</a>
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-close"></i>Decline</a>
+            </section>
+        </section>
+
+        <section class="panel col-sm-offset-1 col-lg-offset-3 col-xs-16 col-sm-16 col-md-16 col-lg-12">
+            <header class="panel__header">
+                <h4 class="panel__heading-4 panel__heading-4_uppercase panel__heading-4_theme">competitor</h4>
+                <div class="panel__status">
+                    <p class="panel__date">03/01/14</p>
+                    <span class="badge badge_new">New</span>
+                </div>
+            </header>
+            <section class="panel__body">
+                <section class="panel__article">
+                    <h3 class="panel__heading-3">mikhail kuznetsov</h3>
+                    <h4 class="panel__heading-4 panel__heading-4_capitalized">yandex<span class="badge badge_outlined">Public parent</span></h4>
+                    <h5 class="panel__heading-5">FE developer<span class="panel__date">(12/01/11 - 06/05/13)</span></h5>
+                </section>
+            </section>
+            <section class="panel__footer">
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-phone"></i>schedule</a>
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-info-circle"></i>request info</a>
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-close"></i>Decline</a>
+            </section>
+        </section>
+
+        <section class="panel col-sm-offset-1 col-lg-offset-3 col-xs-16 col-sm-16 col-md-16 col-lg-12">
+            <header class="panel__header">
+                <h4 class="panel__heading-4 panel__heading-4_uppercase panel__heading-4_theme">customer</h4>
+                <div class="panel__status">
+                    <p class="panel__date">07/13/14</p>
+                    <span class="badge badge_viewed">Viewed</span>
+                </div>
+                <h3 class="panel__heading-3">nikita reshetnikov</h3>
+                <h4 class="panel__heading-4 panel__heading-4_capitalized">google<span class="badge badge_outlined">Public</span></h4>
+                <h5 class="panel__heading-5">FE developer<span class="panel__date">(12/01/11 - 06/05/13)</span></h5>
+            </header>
+            <section class="panel__footer">
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-phone"></i>schedule</a>
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-info-circle"></i>request info</a>
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-close"></i>Decline</a>
+            </section>
+        </section>
+
+        <section class="panel col-sm-offset-1 col-lg-offset-3 col-xs-16 col-sm-16 col-md-16 col-lg-12">
+            <header class="panel__header">
+                <h4 class="panel__heading-4 panel__heading-4_uppercase panel__heading-4_theme">competitor</h4>
+                <div class="panel__status">
+                    <p class="panel__date">03/01/14</p>
+                    <span class="badge badge_viewed">Viewed</span>
+                </div>
+                <h3 class="panel__heading-3">mikhail kuznetsov</h3>
+                <h4 class="panel__heading-4 panel__heading-4_capitalized">yandex<span class="badge badge_outlined">Public parent</span></h4>
+                <h5 class="panel__heading-5">FE developer<span class="panel__date">(12/01/11 - 06/05/13)</span></h5>
+            </header>
+            <section class="panel__footer">
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-phone"></i>schedule</a>
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-info-circle"></i>request info</a>
+                <a href="#" class="panel__footer-btn panel__footer-btn_theme"><i class="fa panel__glyphicon fa-close"></i>Decline</a>
+            </section>
+        </section>
     </div>
-    <div class="panel panel-2">
-      <p>Give</p>
-      <p>Take</p>
-      <p>Receive</p>
-    </div>
-    <div class="panel panel-3">
-      <p>Experience</p>
-      <p>It</p>
-      <p>Today</p>
-    </div>
-    <div class="panel panel-4">
-      <p>Give</p>
-      <p>All</p>
-      <p>You Can</p>
-    </div>
-    <div class="panel panel-5">
-      <p>Life</p>
-      <p>In</p>
-      <p>Motion</p>
-    </div>
-  </div>
 </body>
 
 </html>

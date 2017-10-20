@@ -1,0 +1,33 @@
+.header{
+    background: $header-background-color;
+    display: inline-block;
+    height: $header-height;
+    position: fixed;
+    text-align: center; 
+    width: $nav-width;
+    @include clearfix();
+    &__logo{
+        max-width: 100%;
+        max-height: 100%;
+    }
+    &__btn{
+        float: left;
+        margin: (($header-height-mobile - 32px)/2) 25px;
+        &_theme{
+            color: $header-btn-color;
+        }
+    }
+    @media all and (max-width:map-get($resolutions,'xs')){
+         &{
+             height: $header-height-mobile;
+             display: block;
+             width: 100%;
+             z-index: 2;
+         }
+    }
+    @media all and (min-width:map-get($resolutions,'sm')){
+        &_hidden-sm{
+            display: none;
+        }
+    }
+}

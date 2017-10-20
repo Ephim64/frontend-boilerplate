@@ -1,0 +1,27 @@
+.select{
+    border-radius: 5px;
+    padding: 10px 10px;
+    width: 100%;
+    &__wrapper{
+        display: block;
+        margin:{
+            left: 140px; 
+            right: 165px;
+        }
+        @media all and(min-width:map-get($resolutions,'md')){
+            margin:{
+                left: 22%;
+                right: 26%;
+            }
+        }
+        @media all and (max-width:map-get($resolutions,'xs')){
+            &{
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+    &_theme{
+        color: $select-text-color;
+    }
+}
