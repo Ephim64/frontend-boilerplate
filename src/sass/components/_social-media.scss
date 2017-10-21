@@ -1,33 +1,41 @@
-.twitter-32,.facebook-32,.rss-32{
+.twitter-32,
+.facebook-32,
+.rss-32 {
     display: block;
     height: 32px;
     margin: 5px 5px;
     width: 32px;
 }
-.twitter-32{
-    background: url('../content/icons/twitter-32.png') no-repeat;
+
+.twitter-32 {
+    // background: url('../content/icons/twitter-32.png') no-repeat;
+    @include sprite($twitter-32);
 }
-.twitter-16{
+
+.twitter-16 {
     background: url('../content/icons/twitter-16.png') no-repeat;
 }
-.facebook-32{
+
+.facebook-32 {
     background: url('../content/icons/facebook-32.png') no-repeat;
 }
-.facebook-16{
+
+.facebook-16 {
     background: url('../content/icons/facebook-16.png') no-repeat;
 }
-.rss-32{
+
+.rss-32 {
     background: url('../content/icons/rss-32.png') no-repeat;
 }
 
-.media-big{
+.media-big {
     margin: 15px 0;
     padding: 0 20px 0 0;
     width: 100%;
-    @media all and (max-width: 992px){
+    @media all and (max-width: 992px) {
         display: none;
     }
-    &-header{
+    &-header {
         border-bottom: 1px dashed $color-border;
         color: $color-primary;
         font-style: italic;
@@ -35,8 +43,8 @@
         text-transform: uppercase;
         text-align: center;
     }
-    &-text{
-        font:{
+    &-text {
+        font: {
             size: 14px;
             style: italic;
             weight: bold;
@@ -44,7 +52,7 @@
         margin-bottom: 20px;
         max-width: 140px;
     }
-    &-btn{
+    &-btn {
         background-position: left center;
         border: 1px solid $color-primary;
         border-radius: 5px;
