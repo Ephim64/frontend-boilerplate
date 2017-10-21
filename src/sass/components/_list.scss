@@ -1,0 +1,17 @@
+.site-info{
+    display: flex;
+    flex-flow: column nowrap;
+}
+.m-list{
+    display: flex;
+    flex-flow: row nowrap;
+    &-item{
+        padding: 10px 0;
+        &:not(:first-child):before{
+            content: $separator;
+            color: $color-text-weak;
+            font-weight: bold;
+            padding: 0 5px;
+        }
+    }
+}

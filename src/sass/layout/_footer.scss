@@ -1,0 +1,22 @@
+.l-footer{
+    align-items: center;
+    border-top: 1px solid #d9d9d9;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $container-max-width;
+    min-width: $container-min-width;
+    padding: 10px $container-padding;
+    @media all and (max-width: 768px){
+        padding: $container-padding-sm;
+    }
+    @media all and (max-width:480px){
+        justify-content: center;
+    }
+    &-div{
+        display: flex;
+        flex-flow: row wrap;
+        padding: 10px 10px;
+    }
+}

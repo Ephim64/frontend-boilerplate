@@ -1,0 +1,16 @@
+.l-header{
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+    padding: 10px 10px;
+    @media all and (min-width:992px){
+        flex-direction: column;
+    }
+    @media all and (max-width: 992px){
+        justify-content: space-between;
+    }
+    @media all and (max-width:480px){
+        flex-direction: column;
+    }
+}

@@ -1,9 +1,0 @@
-@include general-col-rule($cols:$columns);
-
-@each $prefix,$width in $resolutions{
-    @include gen-col-family($prefix,$width,$columns);
-}
-
-@each $prefix,$width in $resolutions{
-    @include gen-col-offset($prefix,$width,$columns);
-}

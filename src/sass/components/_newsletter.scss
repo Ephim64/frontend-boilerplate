@@ -1,0 +1,57 @@
+.m-newsletter{
+    align-items: center;
+    border-bottom: 1px dashed $color-border;
+    border-top: 1px dashed $color-border;
+    display: flex;
+    flex: 1 0 auto;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 5px 10px;
+    margin: 10px 0;
+    @media all and (max-width:768px){
+        flex-flow: row wrap;
+    }
+    &-text{
+        flex: 0 2 auto;
+        padding-left: 40px;
+        min-height: 32px;
+        font-size: 12px;
+        background: url("../content/icons/letter.png") left center no-repeat;
+    }
+    &-form{
+        align-items: center;
+        display: flex;
+        flex: 1 0 auto;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+    }
+    &-input{
+        border: 1px solid $color-primary;
+        border-radius: 3px 0 0 3px;
+        height: 23px;
+        margin-left: 5px;
+        padding: 3px;
+        @media all and (max-width: 768px){
+            flex: 1 0 auto;
+        }
+    }
+    &-btn{
+        background: lighten($color-primary,80%);
+        border: 1px solid $color-primary;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+        padding: 3px 3px;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-weight: bold;
+        height: 23px;
+        &:hover{
+            background: lighten($color-primary,60%);
+        }
+        &:active{
+            background: $color-primary;
+            box-shadow: 2px 2px 10px lighten($color-primary, 50%), 2px -2px 10px lighten($color-primary, 50%);
+            color: $color-text-inverted;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.date-stamp{
+    color: $color-text-weak;
+    display: inline-block;
+    font-size: 14px;
+    &:after{
+        content: $date-stamp-after;
+        padding: 0 5px;
+    }
+}

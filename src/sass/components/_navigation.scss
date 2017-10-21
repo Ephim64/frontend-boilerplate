@@ -1,0 +1,45 @@
+.m-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    @media all and (min-width:992px){
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    @media all and (max-width:992px){
+        flex: 1 0 auto;
+    }
+    @media all and (max-width:768px){
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    @media all and (max-width:480px){
+        order: -1
+    }
+
+    &-item{
+        display: block;
+        margin: 0 5px;
+        padding: 10px 0 15px 0;
+    }
+    &-travelmates{
+        background: url('../content/icons/suitcase.png') no-repeat;
+        @include nav-hover-action(background-position,3px);
+    }
+    &-blog{
+        background: url('../content/icons/blog.png') top center no-repeat;
+        @include nav-hover-action(background-position,3px);
+    }
+    &-list{
+        background: url('../content/icons/alist.png') no-repeat;
+        @include nav-hover-action(background-position,3px);
+    }
+    &-contribute{
+        background: url('../content/icons/contribute.png') no-repeat;
+        @include nav-hover-action(background-position,3px);
+    }
+    &-about{
+        background: url('../content/icons/about.png') no-repeat;
+        @include nav-hover-action(background-position,3px);
+    }
+}

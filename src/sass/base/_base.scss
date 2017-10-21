@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+a{
+    color: $color-primary;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover{
+        color: $color-text-link-hover;
+        border-color: $color-text-link-hover;
+    }
+    &:active{
+        color: $color-text-link-active;
+        border-color: $color-text-link-active;
+    }
+}
+h2,h4,h5,h6{
+    padding: 10px 0;
+    font-weight: bold;
+}
+h2{
+    font-size: 24px;
+}
+h4{
+    font-size: 18px;
+}
+h5{
+    font-size: 16px;
+}
+h6{
+    font-size: 14px;
+}
+@include moveBackground();
