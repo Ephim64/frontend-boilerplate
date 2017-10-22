@@ -61,6 +61,12 @@ const config = {
       },
       {
         test: /\.js$/,
+        enforce: 'pre',
+        exclude: /(node_modules)/,
+        use: 'eslint-loader'
+      },
+      {
+        test: /\.js$/,
         exclude: /(node_modules)/,
         use: { loader: 'babel-loader', options: { cacheDirectory: true } }
       },
@@ -118,3 +124,7 @@ what do we do about external libraries(font-awesome, bootstrap)
   are we going to add polyfills via babel-polyfills and using useBuiltIns
     optimal usage of that property of configuration is usage, which only adds specific import of feature used and not supported by targeted browsers
  */
+
+/* For eslint configuration
+  -- do we need impliedStrict that enables global strict mode
+*/

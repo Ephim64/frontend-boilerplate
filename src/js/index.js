@@ -1,3 +1,5 @@
+import some from './a';
+
 const obj = {
   a: 'a',
   b: 'b',
@@ -8,5 +10,5 @@ const obj = {
 
 const { a, b, ...cde } = obj;
 /* this how i find this file */
-
+some();
 console.log(cde);
