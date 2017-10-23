@@ -1,4 +1,3 @@
-const { resolve, join } = require('path');
 const SpriteSmith = require('webpack-spritesmith');
 const { spriteImages, smCss, smTarget } = require('../paths');
 

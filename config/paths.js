@@ -2,17 +2,21 @@ const { join, resolve } = require('path');
 const { realpathSync } = require('fs');
 
 const root = realpathSync(process.cwd());
+const src = join(root, 'src');
 const resolveRoot = relativePath => resolve(root, relativePath);
+const resolveSrc = relativePath => resolve(src, relativePath);
 
 module.exports = {
-  html: resolveRoot('src/index.html'),
-  stylesScss: resolveRoot('src/sass/index.scss'),
-  stylesCss: resolveRoot('src/css/index.css'),
-  js: resolveRoot('src/js/index.js'),
+  html: resolveSrc('index.html'),
+  stylesScss: resolveSrc('sass/index.scss'),
+  stylesCss: resolveSrc('css/index.css'),
+  js: resolveSrc('js/index.js'),
+  jsAn: resolveSrc('js/index.an.js'),
   build: resolveRoot('.dist'),
-  spriteImages: resolveRoot('src/content/icons'),
-  spritesmithGenerated: resolveRoot('src/spritesmith-generated'),
-  smTarget: resolveRoot('src/spritesmith-generated/sprite.png'),
-  smCss: resolveRoot('src/spritesmith-generated/sprite.css'),
-  loaders: resolveRoot('config/loaders')
+  spriteImages: resolveSrc('content/icons'),
+  spritesmithGenerated: resolveSrc('spritesmith-generated'),
+  smTarget: resolveSrc('spritesmith-generated/sprite.png'),
+  smCss: resolveSrc('spritesmith-generated/sprite.css'),
+  resolveRoot,
+  resolveSrc
 };
