@@ -10,6 +10,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-debugger": "error"
+    "no-debugger": "error",
+    "no-unused-vars": "error"
   }
 }

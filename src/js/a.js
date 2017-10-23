@@ -1,5 +1,5 @@
 function some() {
-  debugger;
+
   return 'some';
 }
 

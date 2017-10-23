@@ -1,31 +1,16 @@
-const { join } = require('path');
-const { LoaderOptionsPlugin } = require('webpack');
-const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const {
   build,
-  entries,
   html,
   stylesCss,
   stylesScss,
   js,
-  spriteImages,
-  spritesmithGenerated,
-  loaders
+  spritesmithGenerated
 } = require('./paths');
 
-const SpriteSmith = require('./plugins/SpriteSmith.config');
-
-const extractCSS = new ExtractTextPlugin('css/[name].css');
-
 const config = {
-  entry: [stylesCss, js],
+  entry: [stylesScss, js],
   devtool: 'source-map',
-  // devtool: 'eval-source-map',
-  devServer: {
-    contentBase: build
-  },
   output: {
     path: build,
     publicPath: '',
@@ -35,35 +20,15 @@ const config = {
     modules: ['node_modules', spritesmithGenerated],
     extensions: ['.js', '.json']
   },
-  resolveLoader: {
-    alias: {
-      'hl-loader': join(loaders, 'hl-loader.js')
-    }
-  },
   module: {
     rules: [
       {
         test: /\.html$/,
-        use: [
-          'html-loader',
-          {
-            loader: 'htmllint-loader',
-            options: {
-              failOnError: false,
-              failOnWarning: false
-            }
-          }
-        ]
+        use: ['html-loader']
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.(scss|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        exclude: /(node_modules)/,
-        use: 'eslint-loader'
       },
       {
         test: /\.js$/,
@@ -93,14 +58,10 @@ const config = {
     ]
   },
   plugins: [
-    new LoaderOptionsPlugin({ debug: true }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: html
-    }),
-    new StylelintWebpackPlugin(),
-    extractCSS,
-    SpriteSmith
+    })
   ]
 };
 
