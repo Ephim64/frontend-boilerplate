@@ -14,3 +14,7 @@ jspm_packages/
 
 # Build folders
 .dist/
+
+# Some files
+TODO.txt
+Description.txt

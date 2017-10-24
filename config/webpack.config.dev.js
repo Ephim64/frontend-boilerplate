@@ -1,12 +1,17 @@
-const { LoaderOptionsPlugin } = require('webpack');
+const { LoaderOptionsPlugin, HotModuleReplacementPlugin } = require('webpack');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const { smart } = require('webpack-merge');
+
+const { build } = require('./paths');
 const base = require('./webpack.config.base');
 
 const dev = {
   devtool: 'eval-source-map',
   devServer: {
-    contentBase: build
+    contentBase: build,
+    hot: true,
+    open: true,
+    watchContentBase: true
   },
   module: {
     rules: [
@@ -32,7 +37,8 @@ const dev = {
   },
   plugins: [
     new LoaderOptionsPlugin({ debug: true }),
-    new StylelintWebpackPlugin()
+    new StylelintWebpackPlugin(),
+    new HotModuleReplacementPlugin()
   ]
 };
 

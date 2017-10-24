@@ -5,9 +5,11 @@
   "description": "Webpack configuration for RD unit",
   "main": "index.js",
   "scripts": {
-    "build": "set NODE_ENV=production && ./node_modules/.bin/webpack --config ./config/webpack.config.prod.js",
+    "build":
+      "set NODE_ENV=production && node_modules/.bin/webpack --config config/webpack.config.prod.js",
     "watch": "npm run build -- --watch",
-    "start": "set NODE_ENV=development && ./node_modules/.bin/webpack-dev-server --config ./config/webpack.config.dev.js --open"
+    "start":
+      "set NODE_ENV=development && node_modules/.bin/webpack-dev-server --config config/webpack.config.dev.js"
   },
   "repository": {
     "type": "git",

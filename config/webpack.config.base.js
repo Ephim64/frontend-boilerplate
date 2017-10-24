@@ -9,13 +9,15 @@ const {
   spritesmithGenerated
 } = require('./paths');
 
+console.log('styleScss', stylesScss);
+
 module.exports = {
-  entry: [stylesScss, js, jsAn],
+  entry: [stylesScss],
   devtool: 'source-map',
   output: {
     path: build,
     publicPath: '',
-    filename: 'js/[name].[chunkhash].js'
+    filename: 'js/[name].[hash].js'
   },
   resolve: {
     modules: ['node_modules', spritesmithGenerated],
@@ -36,7 +38,7 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'resolve-url-loader?debug',
+          'resolve-url-loader',
           'sass-loader?sourceMap'
         ]
       },
@@ -94,10 +96,8 @@ what do we do about external libraries(font-awesome, bootstrap)
     optimal usage of that property of configuration is usage, which only adds specific import of feature used and not supported by targeted browsers
  */
 
-/* For eslint configuration
-  -- do we need impliedStrict that enables global strict mode
-*/
-
 /* Welp's
   -- looks like sass-loader all picky about comments, don't like the '//' variant
+  -- hot option only work without breaking anything as cli option
+    so to use hot from config hmrplugin needs to be added explicitly
 */
