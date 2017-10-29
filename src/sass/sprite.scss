@@ -1,0 +1,157 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+*/
+$about-x: 32px;
+$about-y: 0px;
+$about-offset-x: -32px;
+$about-offset-y: 0px;
+$about-width: 32px;
+$about-height: 32px;
+$about-total-width: 112px;
+$about-total-height: 96px;
+$about-image: '../content/icons/sprite.png';
+$about: 32px 0px -32px 0px 32px 32px 112px 96px '../content/icons/sprite.png';
+$alist-x: 64px;
+$alist-y: 32px;
+$alist-offset-x: -64px;
+$alist-offset-y: -32px;
+$alist-width: 32px;
+$alist-height: 32px;
+$alist-total-width: 112px;
+$alist-total-height: 96px;
+$alist-image: '../content/icons/sprite.png';
+$alist: 64px 32px -64px -32px 32px 32px 112px 96px '../content/icons/sprite.png';
+$blog-x: 0px;
+$blog-y: 32px;
+$blog-offset-x: 0px;
+$blog-offset-y: -32px;
+$blog-width: 32px;
+$blog-height: 32px;
+$blog-total-width: 112px;
+$blog-total-height: 96px;
+$blog-image: '../content/icons/sprite.png';
+$blog: 0px 32px 0px -32px 32px 32px 112px 96px '../content/icons/sprite.png';
+$contribute-x: 32px;
+$contribute-y: 32px;
+$contribute-offset-x: -32px;
+$contribute-offset-y: -32px;
+$contribute-width: 32px;
+$contribute-height: 32px;
+$contribute-total-width: 112px;
+$contribute-total-height: 96px;
+$contribute-image: '../content/icons/sprite.png';
+$contribute: 32px 32px -32px -32px 32px 32px 112px 96px '../content/icons/sprite.png';
+$facebook-16-x: 96px;
+$facebook-16-y: 0px;
+$facebook-16-offset-x: -96px;
+$facebook-16-offset-y: 0px;
+$facebook-16-width: 16px;
+$facebook-16-height: 16px;
+$facebook-16-total-width: 112px;
+$facebook-16-total-height: 96px;
+$facebook-16-image: '../content/icons/sprite.png';
+$facebook-16: 96px 0px -96px 0px 16px 16px 112px 96px '../content/icons/sprite.png';
+$facebook-32-x: 0px;
+$facebook-32-y: 0px;
+$facebook-32-offset-x: 0px;
+$facebook-32-offset-y: 0px;
+$facebook-32-width: 32px;
+$facebook-32-height: 32px;
+$facebook-32-total-width: 112px;
+$facebook-32-total-height: 96px;
+$facebook-32-image: '../content/icons/sprite.png';
+$facebook-32: 0px 0px 0px 0px 32px 32px 112px 96px '../content/icons/sprite.png';
+$letter-x: 0px;
+$letter-y: 64px;
+$letter-offset-x: 0px;
+$letter-offset-y: -64px;
+$letter-width: 32px;
+$letter-height: 32px;
+$letter-total-width: 112px;
+$letter-total-height: 96px;
+$letter-image: '../content/icons/sprite.png';
+$letter: 0px 64px 0px -64px 32px 32px 112px 96px '../content/icons/sprite.png';
+$rss-32-x: 32px;
+$rss-32-y: 64px;
+$rss-32-offset-x: -32px;
+$rss-32-offset-y: -64px;
+$rss-32-width: 32px;
+$rss-32-height: 32px;
+$rss-32-total-width: 112px;
+$rss-32-total-height: 96px;
+$rss-32-image: '../content/icons/sprite.png';
+$rss-32: 32px 64px -32px -64px 32px 32px 112px 96px '../content/icons/sprite.png';
+$suitcase-x: 64px;
+$suitcase-y: 0px;
+$suitcase-offset-x: -64px;
+$suitcase-offset-y: 0px;
+$suitcase-width: 32px;
+$suitcase-height: 32px;
+$suitcase-total-width: 112px;
+$suitcase-total-height: 96px;
+$suitcase-image: '../content/icons/sprite.png';
+$suitcase: 64px 0px -64px 0px 32px 32px 112px 96px '../content/icons/sprite.png';
+$twitter-16-x: 96px;
+$twitter-16-y: 16px;
+$twitter-16-offset-x: -96px;
+$twitter-16-offset-y: -16px;
+$twitter-16-width: 16px;
+$twitter-16-height: 16px;
+$twitter-16-total-width: 112px;
+$twitter-16-total-height: 96px;
+$twitter-16-image: '../content/icons/sprite.png';
+$twitter-16: 96px 16px -96px -16px 16px 16px 112px 96px '../content/icons/sprite.png';
+$twitter-32-x: 64px;
+$twitter-32-y: 64px;
+$twitter-32-offset-x: -64px;
+$twitter-32-offset-y: -64px;
+$twitter-32-width: 32px;
+$twitter-32-height: 32px;
+$twitter-32-total-width: 112px;
+$twitter-32-total-height: 96px;
+$twitter-32-image: '../content/icons/sprite.png';
+$twitter-32: 64px 64px -64px -64px 32px 32px 112px 96px '../content/icons/sprite.png';
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}

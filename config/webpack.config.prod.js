@@ -1,10 +1,11 @@
 const { smart } = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const base = require('./webpack.config.base');
-const { spriteImages, smCss, smTarget } = require('../paths');
+const SpriteSmith = require('webpack-spritesmith');
+const { spriteImages, smCss, smTarget } = require('./paths');
 
 const extractCSS = new ExtractTextPlugin('css/[name].css');
-const SpriteSmith = new SpriteSmith({
+const spriteSmith = new SpriteSmith({
   src: {
     cwd: spriteImages,
     glob: '*.png'
@@ -38,7 +39,7 @@ const prod = {
       }
     ]
   },
-  plugins: [extractCSS, SpriteSmith]
+  plugins: [extractCSS, spriteSmith]
 };
 
 const config = smart(base, prod);
