@@ -24,18 +24,6 @@ const dev = {
         ]
       },
       {
-        test: /\.js$/,
-        enforce: 'pre',
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'eslint-loader',
-          options: {
-            failOnError: false,
-            faileOnWarning: false
-          }
-        }
-      },
-      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       },
@@ -47,6 +35,18 @@ const dev = {
           'resolve-url-loader?debug',
           'sass-loader?sourceMap'
         ]
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'eslint-loader',
+          options: {
+            failOnError: false,
+            faileOnWarning: false
+          }
+        }
       }
     ]
   },

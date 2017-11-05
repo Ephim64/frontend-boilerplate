@@ -1,4 +1,4 @@
-const { smart } = require('webpack-merge');
+const merge = require('webpack-merge');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const base = require('./webpack.config.base');
 
@@ -27,5 +27,4 @@ const prod = {
   plugins: [extractCSS]
 };
 
-const config = smart(base, prod);
-module.exports = config;
+module.exports = merge(base, prod);
