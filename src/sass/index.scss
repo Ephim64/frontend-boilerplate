@@ -1,20 +1,14 @@
-//Theme
 @import "theme/default";
-//Iconst
 @import "~sprite.scss";
-//Variables
 @import "helpers/variables";
 @import "helpers/color-variables";
 @import "helpers/mixins";
-//Base
 @import "base/reset";
 @import "base/base";
-//Layout
 @import "layout/container";
 @import "layout/header";
 @import "layout/main";
 @import "layout/footer";
-//Components
 @import "components/navigation";
 @import "components/logo";
 @import "components/carousel";

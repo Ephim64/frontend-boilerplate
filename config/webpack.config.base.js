@@ -6,11 +6,13 @@ const {
   stylesScss,
   js,
   jsAn,
-  spritesmithGenerated
+  spritesmithGenerated,
+  resolveSrc,
+  resolveRoot
 } = require('./paths');
 
 module.exports = {
-  entry: [stylesScss, js, jsAn],
+  entry: [stylesScss],
   devtool: 'source-map',
   output: {
     path: build,
@@ -18,27 +20,14 @@ module.exports = {
     filename: 'js/[name].[chunkhash].js'
   },
   resolve: {
-    modules: ['node_modules', stylesScss],
-    extensions: ['.js', '.json']
+    modules: ['node_modules', spritesmithGenerated, resolveSrc('sass')],
+    extensions: ['.js', '.json', '.scss']
   },
   module: {
     rules: [
       {
         test: /\.html$/,
-        use: ['html-loader']
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'resolve-url-loader?debug',
-          'sass-loader?sourceMap'
-        ]
+        use: 'html-loader'
       },
       {
         test: /\.js$/,
@@ -101,3 +90,11 @@ what do we do about external libraries(font-awesome, bootstrap)
 /* Welp's
   -- looks like sass-loader all picky about comments, don't like the '//' variant
 */
+
+/* 
+  so the webpack cannot pickup and load files that linked in src of script tags
+  means that it needs to be explicetly added as entry point
+
+  so we can process process js files linked in html but if their loader produce error output instead of source code(like eslint)
+  then it will be put in html instead of source code and html-plugin will fail
+ */
