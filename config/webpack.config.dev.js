@@ -2,6 +2,7 @@ const { LoaderOptionsPlugin } = require('webpack');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const { smart } = require('webpack-merge');
 const base = require('./webpack.config.base');
+const { build } = require('./paths');
 
 const dev = {
   devtool: 'eval-source-map',

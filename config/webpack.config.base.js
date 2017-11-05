@@ -18,7 +18,7 @@ module.exports = {
     filename: 'js/[name].[chunkhash].js'
   },
   resolve: {
-    modules: ['node_modules', spritesmithGenerated],
+    modules: ['node_modules', stylesScss],
     extensions: ['.js', '.json']
   },
   module: {
