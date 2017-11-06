@@ -1,15 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {
-  build,
-  html,
-  stylesCss,
-  stylesScss,
-  js,
-  jsAn,
-  spritesmithGenerated,
-  resolveSrc,
-  resolveRoot
-} = require('./paths');
+const { build, html, stylesScss, resolveSrc } = require('./paths');
 
 module.exports = {
   entry: [stylesScss],
@@ -20,7 +10,7 @@ module.exports = {
     filename: 'js/[name].[chunkhash].js'
   },
   resolve: {
-    modules: ['node_modules', spritesmithGenerated, resolveSrc('sass/base')],
+    modules: ['node_modules', resolveSrc('sass/base')],
     extensions: ['.js', '.json', '.scss']
   },
   module: {

@@ -12,7 +12,8 @@
     "lint:html": "node scripts/htmllint ./src/index.html",
     "lint:css": "stylelint ./src/**/*.css",
     "lint:scss": "stylelint ./src/**/*.scss --syntax scss",
-    "lint:js": "eslint ./src/**/*.js"
+    "lint:js": "eslint ./src/**/*.js",
+    "lint:all": "npm run lint:html&npm run lint:css&npm run scss&npm run lint:js"
   },
   "repository": {
     "type": "git",
