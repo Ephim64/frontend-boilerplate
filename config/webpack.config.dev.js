@@ -4,6 +4,7 @@ const { smart } = require('webpack-merge');
 
 const { build } = require('./paths');
 const base = require('./webpack.config.base');
+const { build, resolveLoaders } = require('./paths');
 
 const dev = {
   devtool: 'eval-source-map',
@@ -12,6 +13,12 @@ const dev = {
     hot: true,
     open: true,
     watchContentBase: true
+  },
+  resolveLoader: {
+    alias:{
+      'sasslint-loader': resolveLoaders('sasslint-loader')
+    },
+    extensions: ['.js']
   },
   module: {
     rules: [
@@ -28,10 +35,30 @@ const dev = {
         ]
       },
       {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'resolve-url-loader',
+          'sass-loader?sourceMap',
+          'sasslint-loader'
+        ]
+      },
+      {
         test: /\.js$/,
         enforce: 'pre',
         exclude: /(node_modules)/,
-        use: 'eslint-loader'
+        use: {
+          loader: 'eslint-loader',
+          options: {
+            failOnError: false,
+            faileOnWarning: false
+          }
+        }
       }
     ]
   },
