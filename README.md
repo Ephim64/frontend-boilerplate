@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Название репозитория
 ## Содержание
 [Инструментарий](#tooling)  
@@ -28,9 +27,3 @@
 [1]: https://github.com/Ensighten/spritesmith
 [2]: https://github.com/Ensighten/grunt-spritesmith
 [3]: https://github.com/Ensighten/grunt-spritesmith#documentation
-=======
-1 структура проекта
-2 описание папок
-3 структура package.json
-4 описание скриптов
->>>>>>> e851c880dcb3c35b0a1c1f5b7263eab61288ea2e
