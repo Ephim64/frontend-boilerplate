@@ -1,10 +1,5 @@
 {
-  "plugins":[
-    "stylelint-scss"
-  ],
   "rules":{
-    "color-hex-length": "long",
-    "color-no-invalid-hex": true,
-    "scss/selector-no-redundant-nesting-selector": true
+    "rule-empty-line-before":"always-multi-line"
   }
 }

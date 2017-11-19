@@ -30,18 +30,6 @@ const dev = {
         ]
       },
       {
-        test: /\.js$/,
-        enforce: 'pre',
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'eslint-loader',
-          options: {
-            failOnError: false,
-            faileOnWarning: false
-          }
-        }
-      },
-      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       },
@@ -54,6 +42,18 @@ const dev = {
           'sass-loader?sourceMap',
           'sasslint-loader'
         ]
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'eslint-loader',
+          options: {
+            failOnError: false,
+            faileOnWarning: false
+          }
+        }
       }
     ]
   },

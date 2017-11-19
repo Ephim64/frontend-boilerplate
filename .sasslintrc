@@ -117,7 +117,13 @@
     "no-misspelled-properties": [
       1,
       {
+<<<<<<< HEAD
         "extra-properties": []
+=======
+        "extra-properties": [
+
+        ]
+>>>>>>> e851c880dcb3c35b0a1c1f5b7263eab61288ea2e
       }
     ],
     "no-qualifying-elements": [
@@ -134,8 +140,17 @@
     "no-vendor-prefixes": [
       0,
       {
+<<<<<<< HEAD
         "additional-identifiers": [],
         "excluded-identifiers": []
+=======
+        "additional-identifiers": [
+
+        ],
+        "excluded-identifiers": [
+
+        ]
+>>>>>>> e851c880dcb3c35b0a1c1f5b7263eab61288ea2e
       }
     ],
     "placeholder-in-extend": 1,
@@ -183,7 +198,12 @@
           "dppx",
           "%"
         ],
+<<<<<<< HEAD
         "per-property": {}
+=======
+        "per-property": {
+        }
+>>>>>>> e851c880dcb3c35b0a1c1f5b7263eab61288ea2e
       }
     ],
     "quotes": [
@@ -246,7 +266,13 @@
     "variable-for-property": [
       0,
       {
+<<<<<<< HEAD
         "properties": []
+=======
+        "properties": [
+
+        ]
+>>>>>>> e851c880dcb3c35b0a1c1f5b7263eab61288ea2e
       }
     ],
     "variable-name-format": [

@@ -1,15 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {
-  build,
-  html,
-  stylesCss,
-  stylesScss,
-  js,
-  jsAn,
-  spritesmithGenerated,
-  resolveSrc,
-  resolveRoot
-} = require('./paths');
+const { build, html, stylesScss, resolveSrc } = require('./paths');
 
 module.exports = {
   entry: [stylesScss],
@@ -20,7 +10,7 @@ module.exports = {
     filename: 'js/[name].[chunkhash].js'
   },
   resolve: {
-    modules: ['node_modules', spritesmithGenerated, resolveSrc('sass')],
+    modules: ['node_modules', resolveSrc('sass/base')],
     extensions: ['.js', '.json', '.scss']
   },
   module: {
@@ -98,3 +88,9 @@ what do we do about external libraries(font-awesome, bootstrap)
   so we can process process js files linked in html but if their loader produce error output instead of source code(like eslint)
   then it will be put in html instead of source code and html-plugin will fail
  */
+
+/* 
+  resolve.module resolves depending on type of path specified:
+    absolute - only specified directory
+    relative - directory and ancestors, slimilar to searchig for node_modules
+  */
