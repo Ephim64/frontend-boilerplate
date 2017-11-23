@@ -2,7 +2,6 @@ const { LoaderOptionsPlugin, HotModuleReplacementPlugin } = require('webpack');
 const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 const { smart } = require('webpack-merge');
 
-const { build } = require('./paths');
 const base = require('./webpack.config.base');
 const { build, resolveLoaders } = require('./paths');
 

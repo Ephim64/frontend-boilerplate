@@ -26,3 +26,4 @@
 [1]: https://github.com/Ensighten/spritesmith <!-- Spritesmith -->
 [2]: https://github.com/Ensighten/grunt-spritesmith <!-- Grunt repository -->
 [3]: https://github.com/Ensighten/grunt-spritesmith#documentation <!-- Description of the config parameters -->
+[4]: https://webpack.js.org/ <!-- Webpack -->
