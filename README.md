@@ -23,6 +23,6 @@
 #### Javascript
 ```npm run lint:js```
 
-[1]: https://github.com/Ensighten/spritesmith
-[2]: https://github.com/Ensighten/grunt-spritesmith
-[3]: https://github.com/Ensighten/grunt-spritesmith#documentation
+[1]: https://github.com/Ensighten/spritesmith <!-- Spritesmith -->
+[2]: https://github.com/Ensighten/grunt-spritesmith <!-- Grunt repository -->
+[3]: https://github.com/Ensighten/grunt-spritesmith#documentation <!-- Description of the config parameters -->
