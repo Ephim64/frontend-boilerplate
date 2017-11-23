@@ -11,7 +11,7 @@
     "spritesmith": "spritesmith",
     "lint:html": "node scripts/htmllint ./src/index.html",
     "lint:css": "stylelint ./src/**/*.css",
-    "lint:scss": "sass-lint -c .sasslintrc **/_default.scss -v -q",
+    "lint:scss": "sass-lint -c .sasslintrc **/*.scss -v -q",
     "lint:js": "eslint ./src/**/*.js",
     "lint": "npm run lint:html&npm run lint:css&npm run lint:scss&npm run lint:js"
   },
