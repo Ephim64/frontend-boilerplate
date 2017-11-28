@@ -38,21 +38,21 @@ boilerplate-webpack
 └── README.md
 ```
 ### Папки
-```config/``` - содержит все, что относится к конфигурации окружения: кофигурационные файлы webpack-а, функции, необходимые для построения путей относительно тех или иных частей проекта.
-```node_modules/``` - содержит все установленные модули, объявленные в package.json.
-```scripts/``` - содержит в себе файлы, которые могут запускаться в качестве скриптов.
+```config/``` - содержит все, что относится к конфигурации окружения: кофигурационные файлы webpack-а, функции, необходимые для построения путей относительно тех или иных частей проекта.  
+```node_modules/``` - содержит все установленные модули, объявленные в package.json.  
+```scripts/``` - содержит в себе файлы, которые могут запускаться в качестве скриптов.  
 ```src/``` - содержит исходный код приложения.
 ### Файлы
 ```.babelrc``` - конфигурационные файл для [Babel](https://babeljs.io/).
-```.editorconfig``` - конфигурационный файл для [EditorConfig](http://editorconfig.org/), плагина Visual Studio Code.
-```.eslintrc.json``` - конфигурационный файл для [еslint](https://eslint.org/). Более подробно о конфигурационном файле в [разделе на оффициальном сайте](https://eslint.org/docs/user-guide/configuring#using-configuration-files).
-```.gitignore``` - содержит шаблоны для игнорирования определенных файлов.
-```.htmllintrc``` - конфигурационный файл для [htmllint](https://github.com/htmllint/htmllint).
-```.sasslintrc``` - конфигурационный файл для [sass-lint](https://www.npmjs.com/package/sass-lint).
-```.spritesmith.js``` - содержит конфигурационный объект для [spritesmith](https://github.com/Ensighten/spritesmith).
-```.stylelintrc``` - конфигурационный файл для [stylelint](https://stylelint.io/).
-```package.json``` - файл-описание приложения.
-```README.md``` - текущий файл, содержит информацию о других файла.
+```.editorconfig``` - конфигурационный файл для [EditorConfig](http://editorconfig.org/), плагина Visual Studio Code.  
+```.eslintrc.json``` - конфигурационный файл для [еslint](https://eslint.org/). Более подробно о конфигурационном файле в [разделе на оффициальном сайте](https://eslint.org/docs/user-guide/configuring#using-configuration-files).  
+```.gitignore``` - содержит шаблоны для игнорирования определенных файлов.  
+```.htmllintrc``` - конфигурационный файл для [htmllint](https://github.com/htmllint/htmllint).  
+```.sasslintrc``` - конфигурационный файл для [sass-lint](https://www.npmjs.com/package/sass-lint).  
+```.spritesmith.js``` - содержит конфигурационный объект для [spritesmith](https://github.com/Ensighten/spritesmith).  
+```.stylelintrc``` - конфигурационный файл для [stylelint](https://stylelint.io/).  
+```package.json``` - файл-описание приложения.  
+```README.md``` - текущий файл, содержит информацию о других файла.  
 ## [](#commands)Комманды
 ### Создание css-спрайтов
 Для создания css-спрайтов необходимо выполнить команду ```npm run spritesmith```.  
