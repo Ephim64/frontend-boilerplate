@@ -43,9 +43,9 @@ boilerplate-webpack
 ```scripts/``` - содержит в себе файлы, которые могут запускаться в качестве скриптов.  
 ```src/``` - содержит исходный код приложения.
 ### Файлы
-```.babelrc``` - конфигурационные файл для [Babel](https://babeljs.io/).
+```.babelrc``` - конфигурационные файл для [Babel](https://babeljs.io/). Более подробно в [разделе на официальном сайте](https://babeljs.io/docs/usage/babelrc/).
 ```.editorconfig``` - конфигурационный файл для [EditorConfig](http://editorconfig.org/), плагина Visual Studio Code.  
-```.eslintrc.json``` - конфигурационный файл для [еslint](https://eslint.org/). Более подробно о конфигурационном файле в [разделе на оффициальном сайте](https://eslint.org/docs/user-guide/configuring#using-configuration-files).  
+```.eslintrc.json``` - конфигурационный файл для [еslint](https://eslint.org/). Более подробно о конфигурационном файле в [разделе на официальном сайте](https://eslint.org/docs/user-guide/configuring#using-configuration-files).  
 ```.gitignore``` - содержит шаблоны для игнорирования определенных файлов.  
 ```.htmllintrc``` - конфигурационный файл для [htmllint](https://github.com/htmllint/htmllint).  
 ```.sasslintrc``` - конфигурационный файл для [sass-lint](https://www.npmjs.com/package/sass-lint).  
