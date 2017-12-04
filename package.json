@@ -1,8 +1,8 @@
 {
-  "name": "boilerplate-webpack",
+  "name": "front-end-boilerplate",
   "private": true,
   "version": "0.0.1",
-  "description": "Webpack configuration for RD unit",
+  "description": "Template for front-end developers",
   "main": "index.js",
   "scripts": {
     "spritesmith": "node_modules/.bin/spritesmith",
