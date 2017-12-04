@@ -3,8 +3,7 @@
 [Инструментарий](#tooling)  
 [Структура проекта](#structure)  
 [Комманды](#commands)  
-
-## [](#tooling)Инструментарий
+## <a name="tooling"></a>Инструментарий
 В данном шаблоне используется следующий набор инструментов:
 1. [npm](https://www.npmjs.com/) - менеджер пакетов Node, используется для установки пакетов и создания скриптов
 2. [spritesmith](https://github.com/Ensighten/spritesmith) - для генерации css-спрайтов
@@ -12,7 +11,7 @@
 4. [stylelint](https://stylelint.io/) - для анализа css-файлов
 5. [sass-lint](https://www.npmjs.com/package/sass-lint) - для анализа scss-файлов
 6. [eslint](https://eslint.org/) - для анализа javascript-файлов
-## [](#structure)Структура проекта
+## <a name="structure"></a>Структура проекта
 ```
 front-end-boilerplate
 ├── node_modules/
@@ -43,7 +42,7 @@ front-end-boilerplate
 ```.stylelintrc``` - конфигурационный файл для [stylelint](https://stylelint.io/).  
 ```package.json``` - файл-описание приложения.  
 ```README.md``` - текущий файл, содержит информацию о других файла.  
-## [](#commands)Комманды
+## <a name="commands"></a>Комманды
 ### Создание css-спрайтов
 Для создания css-спрайтов необходимо выполнить команду ```npm run spritesmith```.  
 Данная команда, используя пакет [spritesmith](https://github.com/Ensighten/spritesmith), создаст css-спрайт на основе настроек, указанных в конфигурационном файле.
