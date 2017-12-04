@@ -1,8 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { build, html, stylesScss, resolveSrc } = require('./paths');
+const { js, build, html, stylesScss, vendors, resolveSrc } = require('./paths');
 
 module.exports = {
-  entry: [stylesScss],
+  entry: {
+    styles: stylesScss,
+    js, 
+    vendors: vendors
+  },
   devtool: 'source-map',
   output: {
     path: build,
