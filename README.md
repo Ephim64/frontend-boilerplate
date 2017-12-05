@@ -1,4 +1,4 @@
-# Название репозитория
+# Front-end boilerplate
 ## Содержание
 [Инструментарий](#tooling)  
 [Структура проекта](#structure)  
@@ -13,7 +13,7 @@
 6. [eslint](https://eslint.org/) - для анализа javascript-файлов
 ## <a name="structure"></a>Структура проекта
 ```
-front-end-boilerplate
+frontend-boilerplate
 ├── node_modules/
 ├── scripts/
 │   └── htmllint.js
