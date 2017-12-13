@@ -1,5 +1,4 @@
-var a = 1;
-
-if (a > 'wwwww') {
-    alert(a);
-}
+(function () {
+    // Write your code here ...
+    console.log('Hello!');
+}());
