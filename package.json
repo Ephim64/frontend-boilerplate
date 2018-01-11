@@ -5,10 +5,10 @@
   "description": "Template for front-end developers",
   "main": "index.js",
   "scripts": {
-    "spritesmith": "node_modules/.bin/spritesmith",
+    "spritesmith": "spritesmith",
     "lint:html": "node scripts/htmllint ./src/index.html",
     "lint:css": "stylelint ./src/**/*.css",
-    "lint:scss": "sass-lint -c .sasslintrc **/*.scss -v -q",
+    "lint:scss": "sass-lint -c .sasslintrc ./src/**/*.scss -v -q",
     "lint:js": "eslint ./src/**/*.js",
     "lint": "npm run lint:html&npm run lint:css&npm run lint:scss&npm run lint:js",
     "start": "esw ./src/**/*.js -w"

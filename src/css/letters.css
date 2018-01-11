@@ -1,0 +1,69 @@
+:root {
+  --p: #1A9CB0;
+  --o: transparent; }
+
+body {
+  margin: 0; }
+
+.welcome {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 500px;
+  user-select: none; }
+
+.lift {
+  transform: translateY(-15%);
+  --p: #39C2D7; }
+
+.letter {
+  display: inline-block;
+  transition: all 250ms ease; }
+  .letter:before {
+    transform: translate3d(-20px, -20px, 0);
+    display: block;
+    content: '';
+    width: 20px;
+    height: 20px; }
+
+.r {
+  width: 80px;
+  height: 120px; }
+  .r:before {
+    box-shadow: 20px 20px var(--p),40px 20px var(--p),60px 20px var(--p),80px 20px var(--o),20px 40px var(--p),40px 40px var(--o),60px 40px var(--o),80px 40px var(--p),20px 60px var(--p),40px 60px var(--o),60px 60px var(--o),80px 60px var(--p),20px 80px var(--p),40px 80px var(--p),60px 80px var(--p),80px 80px var(--o),20px 100px var(--p),40px 100px var(--o),60px 100px var(--o),80px 100px var(--p),20px 120px var(--p),40px 120px var(--o),60px 120px var(--o),80px 120px var(--p); }
+
+.d {
+  width: 80px;
+  height: 120px; }
+  .d:before {
+    box-shadow: 20px 20px var(--p),40px 20px var(--p),60px 20px var(--p),80px 20px var(--o),20px 40px var(--p),40px 40px var(--o),60px 40px var(--o),80px 40px var(--p),20px 60px var(--p),40px 60px var(--o),60px 60px var(--o),80px 60px var(--p),20px 80px var(--p),40px 80px var(--o),60px 80px var(--o),80px 80px var(--p),20px 100px var(--p),40px 100px var(--o),60px 100px var(--o),80px 100px var(--p),20px 120px var(--p),40px 120px var(--p),60px 120px var(--p),80px 120px var(--o); }
+
+.s {
+  width: 80px;
+  height: 120px; }
+  .s:before {
+    box-shadow: 20px 20px var(--o),40px 20px var(--p),60px 20px var(--p),80px 20px var(--o),20px 40px var(--p),40px 40px var(--o),60px 40px var(--o),80px 40px var(--p),20px 60px var(--o),40px 60px var(--p),60px 60px var(--o),80px 60px var(--o),20px 80px var(--o),40px 80px var(--o),60px 80px var(--p),80px 80px var(--o),20px 100px var(--p),40px 100px var(--o),60px 100px var(--o),80px 100px var(--p),20px 120px var(--o),40px 120px var(--p),60px 120px var(--p),80px 120px var(--o); }
+
+.t {
+  width: 100px;
+  height: 120px; }
+  .t:before {
+    box-shadow: 20px 20px var(--p),40px 20px var(--p),60px 20px var(--p),80px 20px var(--p),100px 20px var(--p),20px 40px var(--o),40px 40px var(--o),60px 40px var(--p),80px 40px var(--o),100px 40px var(--o),20px 60px var(--o),40px 60px var(--o),60px 60px var(--p),80px 60px var(--o),100px 60px var(--o),20px 80px var(--o),40px 80px var(--o),60px 80px var(--p),80px 80px var(--o),100px 80px var(--o),20px 100px var(--o),40px 100px var(--o),60px 100px var(--p),80px 100px var(--o),100px 100px var(--o),20px 120px var(--o),40px 120px var(--o),60px 120px var(--p),80px 120px var(--o),100px 120px var(--o); }
+
+.a {
+  width: 80px;
+  height: 120px; }
+  .a:before {
+    box-shadow: 20px 20px var(--o),40px 20px var(--p),60px 20px var(--p),80px 20px var(--o),20px 40px var(--p),40px 40px var(--o),60px 40px var(--o),80px 40px var(--p),20px 60px var(--p),40px 60px var(--o),60px 60px var(--o),80px 60px var(--p),20px 80px var(--p),40px 80px var(--p),60px 80px var(--p),80px 80px var(--p),20px 100px var(--p),40px 100px var(--o),60px 100px var(--o),80px 100px var(--p),20px 120px var(--p),40px 120px var(--o),60px 120px var(--o),80px 120px var(--p); }
+
+.e {
+  width: 80px;
+  height: 120px; }
+  .e:before {
+    box-shadow: 20px 20px var(--p),40px 20px var(--p),60px 20px var(--p),80px 20px var(--p),20px 40px var(--p),40px 40px var(--o),60px 40px var(--o),80px 40px var(--o),20px 60px var(--p),40px 60px var(--p),60px 60px var(--p),80px 60px var(--o),20px 80px var(--p),40px 80px var(--o),60px 80px var(--o),80px 80px var(--o),20px 100px var(--p),40px 100px var(--o),60px 100px var(--o),80px 100px var(--o),20px 120px var(--p),40px 120px var(--p),60px 120px var(--p),80px 120px var(--p); }
+
+.white-space {
+  display: inline-block;
+  width: 80px;
+  height: 120px;
+  background-color: transparent; }

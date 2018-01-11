@@ -1,4 +1,5 @@
 (function () {
     // Write your code here ...
-    console.log('Hello!');
+    var tryMe = 'Hey, Eslint!';
+    document.querySelector('.rd-starter').addEventListener('click', e => e.target.classList.toggle('lift'));
 }());

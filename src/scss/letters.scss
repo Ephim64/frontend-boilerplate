@@ -1,0 +1,153 @@
+$pixelSize: 20px;
+$letterWidth: 4;
+$letterHeight: 6;
+$colors: ( p: #1A9CB0, o: transparent);
+$R: (p, p, p, o),
+    (p, o, o, p),
+    (p, o, o, p),
+    (p, p, p, o),
+    (p, o, o, p),
+    (p, o, o, p);
+$D: (p, p, p, o),
+    (p, o, o, p),
+    (p, o, o, p),
+    (p, o, o, p),
+    (p, o, o, p),
+    (p, p, p, o);
+$S: (o p p o),
+    (p o o p),
+    (o p o o),
+    (o o p o),
+    (p o o p),
+    (o p p o);
+$T: (p p p p p),
+    (o o p o o),
+    (o o p o o),
+    (o o p o o),
+    (o o p o o),
+    (o o p o o);
+$A: (o p p o),
+    (p o o p),
+    (p o o p),
+    (p p p p),
+    (p o o p),
+    (p o o p);
+$E: (p p p p),
+    (p o o o),
+    (p p p o),
+    (p o o o),
+    (p o o o),
+    (p p p p);
+
+@function drawRow($row, $yOffset) {
+    $shadow: '';
+    @for $i from 1 through length($row) {
+        $shadow: $shadow + ($i*$pixelSize) + ' ' + $yOffset + ' ' nth($row, $i);
+        @if not ($i==length($row)) {
+            $shadow: $shadow + ',';
+        }
+    }
+    @return $shadow;
+}
+
+@function drawLetter($letter) {
+    $shadow: '';
+    @for $i from 1 through length($letter) {
+        $row: nth($letter, $i);
+        @for $j from 1 through length($row) {
+            $shadow: $shadow + ($j*$pixelSize) + ' ' + ($i*$pixelSize) + ' ' + 'var(--#{nth($list: $row, $n: $j)})';
+            @if not ($i==length($letter) and $j==length($row)) {
+                $shadow: $shadow + ',';
+            }
+        }
+    }
+    @return unquote($string: $shadow);
+}
+
+@function first($list){
+    @return nth($list, 1);
+}
+
+:root{
+    @each $varName, $value in $colors{
+        --#{$varName}: $value;
+    }
+}
+
+body{
+    margin: 0;
+}
+
+.welcome{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+    user-select: none;
+}
+
+.lift{
+    transform:translateY(-15%);
+    --p: #39C2D7;
+}
+
+.letter{
+    display: inline-block;
+    transition: all 250ms ease;
+  &:before{
+    transform: translate3d(-$pixelSize, -$pixelSize, 0);
+    display: block;
+    content: '';
+    width: $pixelSize;
+    height: $pixelSize;
+  }
+}
+.r {
+    width: $pixelSize*length(first($R));
+    height: $pixelSize*length($R);
+    &:before {
+        box-shadow: drawLetter($R);
+    }
+}
+.d {
+    width: $pixelSize*length(first($D));
+    height: $pixelSize*length($D);
+    &:before {
+        box-shadow: drawLetter($D);
+    }
+}
+.s {
+    width: $pixelSize*length(first($S));
+    height: $pixelSize*length($S);
+    &:before {
+        box-shadow: drawLetter($S);
+    }
+}
+.t {
+    width: $pixelSize*length(first($T));
+    height: $pixelSize*length($T);
+    &:before {
+        box-shadow: drawLetter($T);
+    }
+}
+.a {
+    width: $pixelSize*length(first($A));
+    height: $pixelSize*length($A);
+    &:before {
+        box-shadow: drawLetter($A);
+    }
+}
+.e {
+    width: $pixelSize*length(first($E));
+    height: $pixelSize*length($E);
+    &:before {
+        box-shadow: drawLetter($E);
+    }
+}
+
+.white-space{
+    display: inline-block;
+    width: $pixelSize*4;
+    height: $pixelSize*6;
+    background-color: transparent;
+}
