@@ -1,19 +1,17 @@
-const { resolve, parse } = require('path');
-const { readFileSync } = require('fs');
-const chalk = require('chalk');
-const htmllint = require('htmllint');
+var path = require('path');
+var fs = require('fs');
+var chalk = require('chalk');
+var htmllint = require('htmllint');
 
-const htmlPath = resolve(process.cwd(), process.argv[2]);
+var htmlPath = path.resolve(process.cwd(), process.argv[2]);
+var html = fs.readFileSync(htmlPath, { encoding: 'utf-8' });
 
-const html = readFileSync(htmlPath, { encoding: 'utf-8' });
-const result = htmllint(html);
-
-result.then(issues => {
-    const header = chalk.underline.yellow(`${parse(htmlPath).base}:`);
+htmllint(html).then(issues => {
+    var header = chalk.underline.yellow(`${path.parse(htmlPath).base}:`);
 
     console.log(header);
     issues.forEach(issue => {
-        const msg = [
+        var msg = [
             chalk.white(`\t${issue.line}:${issue.column}`),
             chalk.red(`\t${issue.rule}`),
             chalk.white(`\t${htmllint.messages.renderIssue(issue)}`)
