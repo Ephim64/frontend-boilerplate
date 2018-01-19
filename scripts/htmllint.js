@@ -5,8 +5,9 @@ var htmllint = require('htmllint');
 
 var htmlPath = path.resolve(process.cwd(), process.argv[2]);
 var html = fs.readFileSync(htmlPath, { encoding: 'utf-8' });
+var options = fs.readFileSync(path.resolve(process.cwd(), '.htmllintrc'), { encode: 'utf-8' });
 
-htmllint(html).then(issues => {
+htmllint(html, JSON.parse(options)).then(issues => {
     var header = chalk.underline.yellow(`${path.parse(htmlPath).base}:`);
 
     console.log(header);
