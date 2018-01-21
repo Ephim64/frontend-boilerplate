@@ -4,12 +4,6 @@
     "merge-default-rules": false
   },
   "rules": {
-    "bem-depth": [
-      1,
-      {
-        "max-depth": 1
-      }
-    ],
     "border-zero": [
       1,
       {
@@ -20,12 +14,6 @@
       1,
       {
         "allow-single-line": true
-      }
-    ],
-    "class-name-format": [
-      1,
-      {
-        "convention": "hyphenatedbem"
       }
     ],
     "clean-import-paths": [
