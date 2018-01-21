@@ -1,5 +1,5 @@
 {
-  "id-class-style" : "bem",
+  "id-class-style" : "dash",
   "spec-char-escape" : false,
   "attr-name-ignore-regex" : "data-*",
   "line-end-style": false
