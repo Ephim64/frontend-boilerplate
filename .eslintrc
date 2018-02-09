@@ -274,7 +274,7 @@
       ],
       "one-var": [
           2,
-          "never"
+          "always"
       ],
       "padded-blocks": [
           2,
